@@ -6,9 +6,11 @@ import cors from 'cors';
 
 import './database';
 import './shared/container';
+import createConnection from  "./database";
 import { router } from './routes';
 import { AppError } from './shared/errors/AppError';
 
+createConnection(process.env.DATABSEURL);
 const app = express();
 
 app.use(cors());
